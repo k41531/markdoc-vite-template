@@ -1,14 +1,12 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
-      entry: 'src/my-element.js',
-      formats: ['es']
+      entry: "src/index.js",
+      formats: ["es"],
+      fileName: "main",
     },
-    rollupOptions: {
-      external: /^lit/
-    }
-  }
-})
+  },
+});

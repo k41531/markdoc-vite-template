@@ -10,7 +10,6 @@ const callout = require("./schema/Callout.markdoc");
 const heading = require("./schema/heading.markdoc");
 const { createContentManifest } = require("./createContentManifest");
 
-const PORT = 4242;
 const CONTENT_DIR = path.join(__dirname, "content");
 const TEMPLATE = fs.readFileSync("./public/template.html", "utf-8");
 
