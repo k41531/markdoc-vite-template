@@ -19,13 +19,6 @@ const contentManifest = createContentManifest(CONTENT_DIR);
 app.use(express.static("dist"));
 
 app.get("*", (req, res) => {
-  // Here we can dynamically fetch variables, like user preferences or feature flags
-  const variables = {
-    flags: {
-      show_secret_feature: false,
-    },
-  };
-
   const path = req.params[0];
   const document = contentManifest[path];
 
@@ -41,17 +34,12 @@ app.get("*", (req, res) => {
     nodes: {
       heading,
     },
-    variables: variables,
   };
 
   const content = Markdoc.transform(ast, config);
   const rendered = Markdoc.renderers.html(content) || "";
   const html = TEMPLATE.replace(/{{ CONTENT }}/, rendered);
   return res.send(html);
-});
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
 });
 
 app.listen(port, () => {
