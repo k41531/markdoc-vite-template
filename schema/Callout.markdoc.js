@@ -5,10 +5,10 @@ module.exports = {
   attributes: {
     type: {
       type: String,
-      default: "note",
-      matches: ["check", "error", "note", "warning"],
+      default: "caution",
+      matches: ["caution", "warning"],
       description:
-        'Controls the color and icon of the callout. Can be: "caution", "check", "note", "warning"',
+        'Controls the color and icon of the callout. Can be: "caution", "warning"',
     },
     title: {
       type: String,

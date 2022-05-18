@@ -2,14 +2,11 @@ import { html, css, LitElement } from "lit";
 
 export class MarkdocCallout extends LitElement {
   static styles = css`
-    .note {
-      background-color: #8792a2;
+    .callout {
+      color: white;
     }
     .caution {
       background-color: #d97917;
-    }
-    .check {
-      background-color: #000000;
     }
     .warning {
       background-color: #ed5f74;
@@ -26,6 +23,6 @@ export class MarkdocCallout extends LitElement {
   }
 
   render() {
-    return html`<p class="${this.type}"><slot></slot></p>`;
+    return html`<p class="callout ${this.type}"><slot></slot></p>`;
   }
 }
